@@ -1,4 +1,5 @@
-﻿/*=============================================================
+﻿
+/*=============================================================
     Authour URI: www.binarytheme.com
     License: Commons Attribution 3.0
 
@@ -82,17 +83,17 @@ font-size: 18px;
 #home-sec { 
   
     
-background: url(../img/1.jpg) no-repeat center 70px; /* Se baja la imagen 70px desde la parte superior para evitar que la barra la corte */
+background: url(../img/1.jpg) no-repeat 50% 50%;
 background-attachment: fixed;
--webkit-background-size: 61% 58%; /* Tamaño específico aplicado a la imagen de fondo */
--moz-background-size: 61% 58%;    /* Tamaño específico aplicado a la imagen de fondo */
--o-background-size: 61% 58%;      /* Tamaño específico aplicado a la imagen de fondo */
-background-size: 61% 58%;         /* Tamaño específico aplicado a la imagen de fondo */
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
 width: 100%;
 display: block;
 height: auto;
- padding-top:0px; /* Ahora sin espacio superior para que la imagen y el contenido suban al máximo */
-   min-height:500px; /* Reducido para que el fondo y contenido estén más arriba */
+ padding-top:190px;
+   min-height:650px;
     color:#fff;
 }
 

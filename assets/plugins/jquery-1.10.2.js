@@ -1,32 +1,32 @@
-/*! 
- * Biblioteca jQuery JavaScript v1.11.0
+/*!
+ * jQuery JavaScript Library v1.11.0
  * http://jquery.com/
  *
- * Incluye Sizzle.js
+ * Includes Sizzle.js
  * http://sizzlejs.com/
  *
- * Copyright 2005, 2014 jQuery Foundation, Inc. y otros colaboradores
- * Liberado bajo la licencia MIT
+ * Copyright 2005, 2014 jQuery Foundation, Inc. and other contributors
+ * Released under the MIT license
  * http://jquery.org/license
  *
- * Fecha: 2014-01-23T21:02Z
+ * Date: 2014-01-23T21:02Z
  */
 
 (function( global, factory ) {
 
 	if ( typeof module === "object" && typeof module.exports === "object" ) {
-		// Para entornos CommonJS y similares donde hay una ventana adecuada,
-		// ejecuta la fábrica y obtiene jQuery
-		// Para entornos que no poseen una ventana con un documento
-		// (como Node.js), expone una fábrica para crear jQuery como module.exports
-		// Esto resalta la necesidad de crear una ventana real
-		// ej. var jQuery = require("jquery")(window);
-		// Ver ticket #14549 para más información
+		// For CommonJS and CommonJS-like environments where a proper window is present,
+		// execute the factory and get jQuery
+		// For environments that do not inherently posses a window with a document
+		// (such as Node.js), expose a jQuery-making factory as module.exports
+		// This accentuates the need for the creation of a real window
+		// e.g. var jQuery = require("jquery")(window);
+		// See ticket #14549 for more info
 		module.exports = global.document ?
 			factory( global, true ) :
 			function( w ) {
 				if ( !w.document ) {
-					throw new Error( "jQuery requiere una ventana con un documento" );
+					throw new Error( "jQuery requires a window with a document" );
 				}
 				return factory( w );
 			};
@@ -34,13 +34,13 @@
 		factory( global );
 	}
 
-// Pasa esto si window aún no está definido
+// Pass this if window is not defined yet
 }(typeof window !== "undefined" ? window : this, function( window, noGlobal ) {
 
-// No se puede hacer esto porque varias aplicaciones incluyendo ASP.NET trace
-// la pila vía arguments.caller.callee y Firefox falla si
-// intentas rastrear cadenas de llamadas "use strict". (#13335)
-// Soporte: Firefox 18+
+// Can't do this because several apps including ASP.NET trace
+// the stack via arguments.caller.callee and Firefox dies if
+// you try to trace through "use strict" call chains. (#13335)
+// Support: Firefox 18+
 //
 
 var deletedIds = [];
@@ -68,21 +68,21 @@ var support = {};
 var
 	version = "1.11.0",
 
-	// Define una copia local de jQuery
+	// Define a local copy of jQuery
 	jQuery = function( selector, context ) {
-		// El objeto jQuery es en realidad solo el constructor init 'mejorado'
-		// Se necesita init si jQuery es llamado (solo permite que se lance el error si no está incluido)
+		// The jQuery object is actually just the init constructor 'enhanced'
+		// Need init if jQuery is called (just allow error to be thrown if not included)
 		return new jQuery.fn.init( selector, context );
 	},
 
-	// Asegúrate de recortar BOM y NBSP (Safari 5.0 e IE)
+	// Make sure we trim BOM and NBSP (here's looking at you, Safari 5.0 and IE)
 	rtrim = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g,
 
-	// Coincide cadenas con guiones para camelizar
+	// Matches dashed string for camelizing
 	rmsPrefix = /^-ms-/,
 	rdashAlpha = /-([\da-z])/gi,
 
-	// Usado por jQuery.camelCase como callback para replace()
+	// Used by jQuery.camelCase as callback to replace()
 	fcamelCase = function( all, letter ) {
 		return letter.toUpperCase();
 	};

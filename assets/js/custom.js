@@ -1,11 +1,13 @@
+
+
 /*=============================================================
-    URI del autor: www.binarytheme.com
-    Licencia: Commons Attribution 3.0
+    Authour URI: www.binarytheme.com
+    License: Commons Attribution 3.0
 
     http://creativecommons.org/licenses/by/3.0/
 
-    100% Para uso personal y comercial.
-    A CAMBIO SOLO DANOS CRÉDITOS Y CUÉNTALE A TUS AMIGOS SOBRE NOSOTROS
+    100% To use For Personal And Commercial Use.
+    IN EXCHANGE JUST GIVE US CREDITS AND TELL YOUR FRIENDS ABOUT US
    
     ========================================================  */
 
@@ -17,17 +19,16 @@
         main_fun: function () {
           
        
-            // FUNCIÓN PRETTYPHOTO 
-            // Inicializa el plugin prettyPhoto para mostrar imágenes en lightbox
+            // PRETTYPHOTO FUNCTION 
+
             $("a.preview").prettyPhoto({
                 social_tools: false
             });
 
           
             /*====================================
-               ESCRIBE TUS SCRIPTS ABAJO 
+               WRITE YOUR SCRIPTS BELOW 
            ======================================*/
-           // Aquí puedes agregar tus scripts personalizados para la página
 
 
         },
@@ -38,8 +39,8 @@
         }
 
     }
-    // Inicialización ///
-    // Cuando el documento esté listo, ejecuta la función principal
+    // Initializing ///
+
     $(document).ready(function () {
         mainApp.main_fun();
     });
