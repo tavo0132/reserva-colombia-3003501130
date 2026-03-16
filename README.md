@@ -11,6 +11,7 @@ Sitio web estático para agencia de viajes ubicada en Quimbaya, Quindío. Desarr
 ✅ **Redes Sociales** - Enlaces a Facebook e Instagram  
 ✅ **Sección de Valores** - Ubicación, Valores y Misión de la empresa  
 ✅ **Logo Personalizado** - Integración del logo oficial de Reserva Colombia  
+✅ **Paquetes Turísticos** - 6 destinos principales con descripciones detalladas y precios.
 ✅ **GitHub Pages Ready** - Sitio completamente estático, listo para producción  
 
 ## 🚀 Inicio Rápido
