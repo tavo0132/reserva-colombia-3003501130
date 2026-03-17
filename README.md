@@ -12,6 +12,7 @@ Sitio web estático para agencia de viajes ubicada en Quimbaya, Quindío. Desarr
 ✅ **Sección de Valores** - Ubicación, Valores y Misión de la empresa  
 ✅ **Logo Personalizado** - Integración del logo oficial de Reserva Colombia  
 ✅ **Paquetes Turísticos** - 6 destinos principales con descripciones detalladas y precios.
+✅ **Galería de Destinos** - 9 imágenes de alta resolución con lightbox integrado (prettyPhoto).
 ✅ **GitHub Pages Ready** - Sitio completamente estático, listo para producción  
 
 ## 🚀 Inicio Rápido
@@ -76,8 +77,12 @@ bs-travelic/
 
 ### 1️⃣ **INICIO** (`Inicio.html`)
 - Título principal: "Reserva Colombia - Agencia de Viajes"
-- Sección de características (Free to use, 100% Responsive, Customizable)
-- Enlaces de navegación
+- Sección de características: Ubicación, Valores y Misión
+- 3 Tour Packages destacados:
+  - **#1**: Eje Cafetero (4 días / 3 noches) - Salento, Filandia, Parque del Café ☕🌴
+  - **#2**: Aventura y Relax (4 días / 3 noches) - Aguas termales de Santa Rosa de Cabal
+  - **#3**: Punta Cana Todo incluido (4 días / 3 noches) - Playas paradisíacas ✅
+- Enlaces de navegación principal
 
 ### 2️⃣ **PAQUETES** (`Paquetes.html`)
 - 6 paquetes turísticos con descripción y precio
@@ -85,9 +90,11 @@ bs-travelic/
 - Información de tours
 
 ### 3️⃣ **GALERIA** (`Galeria.html`)
-- Portfolio de destinos
-- Lightbox con PrettyPhoto
-- Imágenes de paisajes y destinos
+- **Título:** "Galería de Destinos"
+- Descripción promocional sobre destinos colombianos, playas, montañas y ciudades coloniales
+- 9 imágenes de alta resolución con fotografías reales de destinos turísticos
+- Lightbox interactivo con PrettyPhoto (click en imágenes para ampliar)
+- Thumbnails responsivos para navegación móvil
 
 ### 4️⃣ **CONTACTO** (`Contacto.html`)
 - Formulario comentado (futuro desarrollo)
