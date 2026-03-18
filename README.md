@@ -33,8 +33,11 @@ Acceso: `http://localhost:5500` o `http://192.168.1.10:5500` (IP local)
 
 El repositorio está configurado para GitHub Pages. Cualquier push a `main` se publica automáticamente en:
 ```
-https://tavo0132.github.io/reserva-colombia-3003501130/
+https://reservacolombia.com.co (Dominio Personalizado)
+https://tavo0132.github.io/reserva-colombia-3003501130/ (Alternativo)
 ```
+
+**Nota**: SSL/HTTPS está en proceso. Estará disponible en 24-48 horas.
 
 ## 📁 Estructura del Proyecto
 
@@ -165,6 +168,26 @@ Bootstrap grid system garantiza flexibilidad en todos los dispositivos.
 - ✅ Hosted en GitHub Pages (HTTPS automático)
 - ✅ No almacena datos sensibles
 - ✅ Formulario comentado (futuro desarrollo)
+
+## 🌐 Dominio Personalizado
+
+**Dominio Base**: `reservacolombia.com.co`
+
+### Estado de Configuración (18 Marzo 2026)
+| Elemento | Estado | Detalles |
+|----------|--------|---------|
+| DNS | ✅ Activo | Registros A configurados en GoDaddy |
+| CNAME | ✅ Configurado | Archivo CNAME en raíz del repo |
+| URL Primaria | 🌍 Online | https://reservacolombia.com.co |
+| URL Alternativa | 🌍 Online | https://tavo0132.github.io/reserva-colombia-3003501130/ |
+| HTTPS/SSL | ⏳ En proceso | Let's Encrypt provisioning (ETA 24-48h) |
+
+### Acceso Actual
+- **Con dominio (DNS activo)**: https://reservacolombia.com.co
+- **Alternativo GitHub Pages**: https://tavo0132.github.io/reserva-colombia-3003501130/
+- **Local IP**: http://192.168.1.10:5500
+
+📌 **Nota**: El certificado SSL está siendo aprovisionado. Una vez completado, ambas URLs usarán HTTPS sin advertencias de seguridad.
 
 ## 📋 Futuro Desarrollo
 

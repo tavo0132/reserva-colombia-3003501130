@@ -6,8 +6,10 @@ Este archivo sirve como memoria del proyecto para futuras sesiones con asistente
 - **Nombre**: Reserva Colombia - Agencia de Viajes
 - **Repositorio**: https://github.com/tavo0132/reserva-colombia-3003501130
 - **Tipo**: Landing Page Estática (HTML5/CSS3/Bootstrap 3)
-- **Estado Actual**: Producción (Fase de Contenido)
-- **Hosting**: GitHub Pages + Dominio `reservacolombia.com.co` (Pendiente DNS)
+- **Estado Actual**: Producción (Fase 1 - Primer Despliegue)
+- **Hosting**: GitHub Pages + Dominio `reservacolombia.com.co` (DNS Activo)
+- **Dominio Personalizado**: reservacolombia.com.co (GoDaddy - Registros A configurados + CNAME en repo)
+- **SSL/HTTPS**: En proceso (Let's Encrypt - ETA: 24-48h desde 18 Marzo 2026)
 
 ## 📄 Estructura de Archivos Clave
 - `Inicio.html`: Página principal (Home).
@@ -34,10 +36,10 @@ Este archivo sirve como memoria del proyecto para futuras sesiones con asistente
     -   Problema de caché en navegador resuelto con limpieza de cookies y recarga forzada (Ctrl+F5).
 
 ## 📝 Tareas Pendientes (To-Do)
-### Prioridad Alta
+### Prioridad Alta (Próxima Sesión)
+-   **SSL/HTTPS Activación**: Verificar que GitHub Pages haya completado el certificado Let's Encrypt (19-20 Marzo 2026). Cuando esté listo, activar "Enforce HTTPS" en GitHub Settings → Pages.
 -   **Titulos de Galería**: Reemplazar textos genéricos "Lorem ipsum" con nombres específicos de destinos en cada imagen (pendiente de análisis visual de las fotos).
 -   **Alineación Visual (Paquetes)**: Implementar `min-height` en las clases `.panel` o `.panel-body` de `style.css` para que todas las tarjetas tengan la misma altura visual sin usar Flexbox (para mantener compatibilidad con el layout actual).
--   **Dominio**: Configurar registros DNS para `reservacolombia.com.co`.
 
 ### Prioridad Media
 -   **Formulario**: El formulario de contacto es visual. Falta integrar un backend (PHP/Python) o servicio de terceros (Formspree) para enviar correos.
@@ -54,3 +56,26 @@ git add .
 git commit -m "Mensaje"
 git push origin main
 ```
+
+## 🌐 Configuración de Dominio Personalizado (18 Marzo 2026)
+
+### Estado Actual
+- ✅ Dominio comprado: `reservacolombia.com.co` (GoDaddy)
+- ✅ Registros A agregados en GoDaddy (4 IPs de GitHub):
+  - 185.199.108.153
+  - 185.199.109.153
+  - 185.199.110.153
+  - 185.199.111.153
+- ✅ CNAME creado en repositorio: `reservacolombia.com.co`
+- ✅ DNS Check: Exitoso
+- ⏳ SSL/HTTPS: En proceso (Let's Encrypt provisioning) - ETA 24-48h
+
+### URLs Activas
+- **Dominio personalizado (pendiente SSL)**: https://reservacolombia.com.co (DNS activo, SSL en proceso)
+- **GitHub Pages (alternativo)**: https://tavo0132.github.io/reserva-colombia-3003501130/
+- **Local**: http://localhost:5500 o http://192.168.1.10:5500
+
+### Próximos Pasos
+1. Esperar a que GitHub complete certificado SSL (19-20 Marzo 2026)
+2. Verificar "Enforce HTTPS" disponible en Settings → Pages
+3. Confirmar acceso sin errores de seguridad
