@@ -36,14 +36,22 @@ Este archivo sirve como memoria del proyecto para futuras sesiones con asistente
     -   Problema de caché en navegador resuelto con limpieza de cookies y recarga forzada (Ctrl+F5).
 
 ## 📝 Tareas Pendientes (To-Do)
-### Prioridad Alta (Próxima Sesión)
--   **SSL/HTTPS Activación**: Verificar que GitHub Pages haya completado el certificado Let's Encrypt (19-20 Marzo 2026). Cuando esté listo, activar "Enforce HTTPS" en GitHub Settings → Pages.
--   **Titulos de Galería**: Reemplazar textos genéricos "Lorem ipsum" con nombres específicos de destinos en cada imagen (pendiente de análisis visual de las fotos).
--   **Alineación Visual (Paquetes)**: Implementar `min-height` en las clases `.panel` o `.panel-body` de `style.css` para que todas las tarjetas tengan la misma altura visual sin usar Flexbox (para mantener compatibilidad con el layout actual).
+### Prioridad CRÍTICA (SPRINT Actual - 20 Marzo)
+-   **🔴 BLOQUEADO: Configuración DNS GoDaddy**: Requiere código 2FA del dueño del dominio para:
+    - Eliminar registro A "WebsiteBuilder Site"
+    - Cambiar CNAME www de `reservacolombia.com.co` a `tavo0132.github.io`
+    - Una vez se resuelva, activar "Enforce HTTPS" en GitHub Pages
+    - **Timeline**: 1-2 horas (cuando código esté disponible)
+    - **Documentação**: Ver sección "SPRINT: Configuración DNS & HTTPS (20 Marzo 2026)" arriba
+
+### Prioridad Alta (Próxima Sesión - Después de HTTPS)
+-   **SSL/HTTPS Activación**: Cuando DNS esté correcto, activar "Enforce HTTPS" en GitHub Settings → Pages.
+-   **Fase 1 SEO On-Page**: Meta descriptions, Titles únicos, H1, Open Graph tags (ver SEO_ON_PAGE_PLAN.md)
+-   **Titulos de Galería**: Reemplazar textos genéricos "Lorem ipsum" con nombres específicos de destinos en cada imagen.
+-   **Alineación Visual (Paquetes)**: Implementar `min-height` en las clases `.panel` o `.panel-body` de `style.css` para igualar alturas sin Flexbox.
 
 ### Prioridad Media
 -   **Formulario**: El formulario de contacto es visual. Falta integrar un backend (PHP/Python) o servicio de terceros (Formspree) para enviar correos.
--   **SEO**: Agregar meta descriptions y keywords en los `<head>`.
 -   **Responsividad Móvil**: Ajustar CSS media queries para mejorar visualización en pantallas pequeñas (resuelto parcialmente con Bootstrap).
 
 ## 🔧 Comandos Útiles
@@ -67,7 +75,7 @@ git push origin main
   - 185.199.110.153
   - 185.199.111.153
 - ✅ CNAME creado en repositorio: `reservacolombia.com.co`
-- ✅ DNS Check: Exitoso
+- ✅ DNS Check: Exitoso (18 Marzo)
 - ⏳ SSL/HTTPS: En proceso (Let's Encrypt provisioning) - ETA 24-48h
 
 ### URLs Activas
@@ -79,3 +87,161 @@ git push origin main
 1. Esperar a que GitHub complete certificado SSL (19-20 Marzo 2026)
 2. Verificar "Enforce HTTPS" disponible en Settings → Pages
 3. Confirmar acceso sin errores de seguridad
+
+---
+
+## 🚀 SPRINT: Configuración DNS & HTTPS (20 Marzo 2026 - EN PROGRESO)
+
+### 📋 Situación Actual (20 Marzo 2026)
+**Problema Detectado**: DNS Check falló nuevamente. Análisis realizado:
+
+**Causa Raíz**:
+1. Registro A "WebsiteBuilder Site" en GoDaddy está conflicting con GitHub Pages
+2. CNAME para `www` está apuntando a sí mismo (`reservacolombia.com.co`) en lugar de `tavo0132.github.io`
+
+**Bloqueante**: El dueño del dominio no está disponible para enviar código de validación de 2FA en GoDaddy.
+
+### ✅ ACTIONES COMPLETADAS (Sin Validación)
+- [ ] Análisis de registros DNS en GoDaddy
+- [ ] Identificación de conflictos
+- [ ] Documentación de pasos a ejecutar
+
+### ⏳ ACCIONES PENDIENTES (Requieren Validación 2FA del Dueño)
+
+#### PASO 1: Eliminar Registro Conflictivo (Requiere Código del Dueño)
+**Ubicación**: GoDaddy → Dominio reservacolombia.com.co → DNS
+
+**Buscar y Eliminar**:
+- **Tipo**: A
+- **Nombre**: @
+- **Datos**: WebsiteBuilder Site (NO tiene IP 185.199.x.x)
+- **Botón**: 🗑️ Delete → Confirmar → (Requiere código 2FA)
+
+**Status**: ⏳ Pendiente
+
+---
+
+#### PASO 2: Editar CNAME para www (Requiere Código del Dueño)
+**Ubicación**: GoDaddy → Dominio reservacolombia.com.co → DNS
+
+**Buscar Registro CNAME**:
+- **Tipo**: CNAME
+- **Nombre**: www
+- **Datos Actuales**: `reservacolombia.com.co` ❌
+
+**Cambiar a**:
+- **Tipo**: CNAME
+- **Nombre**: www
+- **Datos Nuevos**: `tavo0132.github.io` ✅
+- **Botón**: ✏️ Edit → Cambiar → Guardar → (Requiere código 2FA)
+
+**Status**: ⏳ Pendiente
+
+---
+
+#### PASO 3: Verificar Propagación DNS (Sin Validación)
+**Tiempo**: 30 minutos a 2 horas después de cambios
+
+**Acciones**:
+1. Ir a GitHub → Settings → Pages
+2. Verificar que error DNS desaparezca
+3. Haz clic en **"Check again"**
+4. Esperar a que opción "Enforce HTTPS" se ponga azul (disponible)
+
+**Status**: ⏳ Pendiente (después de PASO 2)
+
+---
+
+#### PASO 4: Activar Enforce HTTPS (Sin Validación)
+**Ubicación**: GitHub → Settings → Pages
+
+**Acción**:
+- Cuando "Enforce HTTPS" esté azul (disponible)
+- Marca la casilla ☑️ "Enforce HTTPS"
+- Guarda
+
+**Resultado Esperado**:
+- ✅ Sitio accesible: https://reservacolombia.com.co (con 🔒 candado verde)
+- ✅ Sin advertencias de seguridad
+- ✅ HTTP → HTTPS redirect automático
+
+**Status**: ⏳ Pendiente (después de PASO 3)
+
+---
+
+#### PASO 5: Validación Final (Sin Validación)
+**Verificaciones**:
+- [ ] Abre Firefox/Chrome
+- [ ] Ingresa: https://reservacolombia.com.co
+- [ ] Verifica 🔒 candado verde en URL
+- [ ] Sin mensajes de error
+- [ ] Acciónables: Inicio, Paquetes, Galería, Contacto
+- [ ] Entra a cada página y verifica que carga correctamente
+
+**Status**: ⏳ Pendiente (después de PASO 4)
+
+---
+
+### 📊 Checklist de Estado (Scrum Sprint Style)
+
+```
+EPIC: Despliegue Dominio Personalizado con HTTPS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔴 BLOQUEADO - Esperando Código 2FA del Dueño del Dominio
+
+STORY 1: Eliminar Conflicto DNS
+├─ [ ] PASO 1: Eliminar Registro "WebsiteBuilder Site"
+└─ Status: ⏳ BLOCKED (Requiere código del dueño)
+
+STORY 2: Configurar CNAME Correcto
+├─ [ ] PASO 2: Editar CNAME www → tavo0132.github.io
+└─ Status: ⏳ BLOCKED (Requiere código del dueño)
+
+STORY 3: Validar DNS Propagación
+├─ [ ] PASO 3: Verifiçar DNS en GitHub Pages
+└─ Status: ⏳ TODO (Después de PASO 2)
+
+STORY 4: Activar HTTPS
+├─ [ ] PASO 4: Marcar "Enforce HTTPS" en GitHub
+└─ Status: ⏳ TODO (Después de PASO 3)
+
+STORY 5: Testing Final
+├─ [ ] PASO 5: Validad acceso HTTPS sin errores
+└─ Status: ⏳ TODO (Después de PASO 4)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Progreso Sprint: 0% (Bloqueado)
+Tiempo Estimado: 1-2 horas (una vez código disponible)
+Próxima Sesión: Cuando dueño envíe código 2FA
+```
+
+---
+
+### 📞 Requisitos para Continuar
+**Lo que necesitas del dueño del dominio:**
+1. ✏️ Código de validación 2FA enviado a su WhatsApp/SMS
+2. ✏️ Acceso a GoDaddy (opcional - podrías pedirle que lo haga directamente)
+
+**Si el dueño no está disponible por whatsapp**:
+- ☎️ Llamada telefónica
+- 📧 Email a cuenta GoDaddy
+- 🔒 Resetear 2FA en GoDaddy (opción de backup)
+
+---
+
+### 🔄 Comandos Git para Este Sprint
+```powershell
+# Después de completar PASO 5, hacer commit:
+git add .
+git commit -m "Deploy: Configuración DNS y HTTPS completada - Dominio reservacolombia.com.co activo"
+git push origin main
+```
+
+---
+
+### 📌 Notas Importantes
+- **TTL DNS**: GoDaddy establece 1 Hora automáticamente (OK)
+- **Propagación**: A veces tarda 2-4 horas en reflejarse globalmente
+- **Testing**: Si no funciona inmediatamente, limpiar caché navegador (Ctrl+F5 o Ctrl+Shift+R)
+- **Alternativo**: Mientras se resuelve, sitio funciona en https://tavo0132.github.io/reserva-colombia-3003501130/
