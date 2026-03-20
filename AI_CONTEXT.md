@@ -210,3 +210,92 @@ Closure Date: 20 Marzo 2026
 - Implementar min-height en paquetes
 - Igualar alturas de tarjetas
 - Tiempo: 1 hora
+
+---
+
+## 📚 SPRINT: Manual de Despliegue (Pendiente - Próximas Sesiones)
+
+**Objetivo**: Crear documentación reutilizable para futuros proyectos de landing pages
+
+### 📋 Tareas Pendientes
+
+#### 1. Manual GoDaddy (1-2h)
+```
+Crear: MANUAL_GODADDY_DNS.md
+
+Contenido:
+├─ Compra de dominio en GoDaddy
+├─ Acceso panel DNS
+├─ Tipo de registros (A, CNAME, NS, MX)
+├─ Cómo crear registros A (paso a paso con screenshots)
+├─ Cómo crear/editar CNAME (paso a paso)
+├─ TTL y propagación DNS
+├─ Validación 2FA y seguridad
+├─ Troubleshooting DNS común
+└─ Errores frecuentes y soluciones
+```
+
+#### 2. Manual GitHub Pages (1-2h)
+```
+Crear: MANUAL_GITHUB_PAGES.md
+
+Contenido:
+├─ Crear repositorio en GitHub
+├─ Configurar GitHub Pages en Settings
+├─ Agregar dominio personalizado
+├─ Crear archivo CNAME
+├─ Esperar DNS check
+├─ Activar Enforce HTTPS
+├─ Certificado SSL automático
+├─ Troubleshooting errores DNS
+└─ Testing y validación
+```
+
+#### 3. Guía de Integración (1h)
+```
+Crear: MANUAL_INTEGRACION_GODADDY_GITHUB.md
+
+Contenido:
+├─ Flujo completo: GoDaddy → GitHub
+├─ Paso a paso integrado
+├─ Timeline esperado (2-3 días)
+├─ Checklist de validación
+├─ Screenshots anotados
+├─ Errores evitables
+└─ Best practices
+```
+
+#### 4. Troubleshooting Guide (1h)
+```
+Crear: TROUBLESHOOTING_DNS_HTTPS.md
+
+Contenido:
+├─ "DNS check unsuccessful" - Soluciones
+├─ HTTPS unavailable - Causas y fixes
+├─ Sitio no resuelve - Debugging
+├─ CNAME conflictivo - Cómo detectar
+├─ Propagación DNS lenta - Qué hacer
+├─ Certificado SSL demora - Timeline
+└─ Casos reales del proyecto
+```
+
+### ⏱️ Tiempo Total Estimado
+- **Manual GoDaddy**: 1-2 horas
+- **Manual GitHub Pages**: 1-2 horas  
+- **Manual Integración**: 1 hora
+- **Troubleshooting Guide**: 1 hora
+- **TOTAL**: 4-6 horas
+
+### 🎯 Beneficio
+- ✅ Reutilizable en 10+ proyectos futuros
+- ✅ Reducir tiempo de configuración de 3-4h a 45min
+- ✅ Evitar frustración en futuros desarrollos
+- ✅ Portfolio profesional de documentación técnica
+
+### 📌 Status
+- **Prioridad**: ALTA (mejora workflows futuros)
+- **Estado**: ⏳ PENDIENTE
+- **Categoría**: Documentación Técnica
+- **Sprint Sugerido**: Próxima sesión o cuando necesites nuevo proyecto
+
+---
